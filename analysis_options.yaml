@@ -1,0 +1,10 @@
+
+include: package:effective_dart/analysis_options.yaml
+
+linter:
+  rules:
+    prefer_relative_imports: false
+    prefer_const_literals_to_create_immutable: true
+    sort_constructors_first: false
+    implicit-casts: false
+    implicit-dynamic: false

@@ -10,8 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_bloc: 
+  equatable:
+  freezed:
+  
   # Core logic
-  logger:
+  emoji_lumberdash:
   get_it:
   provider:
 
@@ -19,13 +23,13 @@ dependencies:
   auto_size_text:
   sized_context:
   animations:
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^0.1.3
 
   # Network
   dio:
   data_connection_checker: ^0.3.4
 
-  rxdart:
+  effective_dart:
 
 dev_dependencies:
   flutter_test:
@@ -37,7 +41,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
+    - assets/images/
 
   # list giving the asset and other descriptors for the font. For
   # example:

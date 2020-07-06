@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:template/service.dart';
-import 'package:template/services/navigation.dart';
-import 'package:template/ui/screens/Home.dart';
-import 'package:template/utils/theme.dart';
+import 'package:template/src/core/utils/theme.dart';
+import 'package:template/src/service_locator.dart';
+import 'package:template/src/services/navigation.dart';
+
+import 'package:template/src/views/screens/Home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +16,7 @@ void main() async {
       <DeviceOrientation>[DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then(
     (_) => runApp(
       MaterialApp(
-        navigatorKey: service<NavigationService>().navigatorKey,
+        navigatorKey: service<Navigation>().navigatorKey,
         title: 'Flutter template',
         themeMode: ThemeMode.light,
         theme: AppTheme(
