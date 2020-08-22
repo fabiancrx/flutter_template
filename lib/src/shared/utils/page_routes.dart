@@ -94,7 +94,7 @@ class PageRoutes {
     );
   }
 
-  ///PageRoute generally used for small components and dialogs
+  ///PageRoute generally used for small views and dialogs
   ///Elements that enter use a quick fade in and scale from 80% to 100%. Elements that exit fade out.
   /// eg: [Dialog],[PopupMenu],[Toast],[FloatingActionButton]
   static Route<T> fadeScale<T>(PageBuilder page, {double duration = kDefaultDuration}) {

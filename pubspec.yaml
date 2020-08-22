@@ -10,14 +10,14 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_bloc: 
-  equatable:
-  freezed:
-  
+  flutter_bloc:
+  freezed_annotation:
+
   # Core logic
   emoji_lumberdash:
   get_it:
   provider:
+  dartz:
 
   # UI
   auto_size_text:
@@ -34,7 +34,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  freezed:
+  build_runner:
 
 flutter:
 

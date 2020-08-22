@@ -27,13 +27,13 @@ class SqliteRepository {
       return _database;
     }
 
-    ///Database is already created in local files
+    ///Database is already created in local_storage files
     try {
       final path = join(await getDatabasesPath(), "db.db");
 
       _database = await openDatabase(path, readOnly: false);
     } catch (e, st) {
-      log("Error Database not found in local files $e", stackTrace: st);
+      log("Error Database not found in local_storage files $e", stackTrace: st);
     }
 
     ///Database needs to be created from assets

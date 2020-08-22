@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:template/src/core/utils/theme.dart';
-import 'package:template/src/service_locator.dart';
-import 'package:template/src/services/navigation.dart';
 
-import 'package:template/src/views/screens/Home.dart';
+import 'package:template/src/service_locator.dart';
+
+import 'package:template/src/screens/home.dart';
+import 'package:template/src/shared/services/navigation.dart';
+
+import 'src/shared/utils/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
