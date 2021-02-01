@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:template/src/service_locator.dart';
 
 import 'package:template/src/screens/home.dart';
-import 'package:template/src/shared/services/navigation.dart';
+import 'package:template/src/app/services/navigation.dart';
 
+import 'src/service_locator.dart';
 import 'src/shared/utils/theme.dart';
 
 void main() async {
