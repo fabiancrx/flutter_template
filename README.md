@@ -40,3 +40,18 @@ Those have not been included to keep this as lightweight as possible and because
 ## Acknowledgement
  Most of the classes contained in the utils are inspired or implemented at [gskinner](http://blog.gskinner.com/archives/category/flutter). Feel free to visit their blog for awesome content.
  All of the awesome packages used here and their authors.
+
+## Package by feature(or domain)
+ Code/package organization is one of the key factors of a good architecture:
+
+ Higher Modularity.
+High Cohesion.
+Easier Code Navigation.
+Minimizes Scope.
+Isolation and Encapsulation.
+
+## App (Core)
+Handle global dependency injection.
+Contain extension functions.
+Contain the main framework abstractions.
+Initiate in the main application common 3rd party libraries like Analytics, Crash Reporting, etc.

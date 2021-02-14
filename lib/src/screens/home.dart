@@ -6,7 +6,11 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Template', maxLines: 2)),
-      body: const Center(child: FlutterLogo(size: 69)),
+      body: Column(
+        children: [
+          const Center(child: FlutterLogo(size: 69)),
+        ],
+      ),
     );
   }
 }

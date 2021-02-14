@@ -14,7 +14,7 @@
 *.ipr
 *.iws
 
-.idea/.gitignore
+.idea/**
 .idea/dictionaries/
 .idea/libraries/
 .idea/misc.xml
@@ -39,6 +39,8 @@ ios/.idea/
 .pub-cache/
 .pub/
 /build/
+/lib/gen
+/lib/generated
 generated_plugin_registrant.dart
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 

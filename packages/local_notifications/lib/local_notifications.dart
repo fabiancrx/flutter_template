@@ -1,1 +1,0 @@
-library local_notifications;

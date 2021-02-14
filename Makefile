@@ -11,7 +11,7 @@ dependencies:
 	flutter pub get
 
 .PHONY: analyze
-analyze:
+analyze:make
 	flutter analyze
 
 .PHONY: format 
@@ -25,7 +25,7 @@ format-analyze:
 
 .PHONY: build-runner
 build-runner:
-	flutter packages pub run build_runner build --delete-conflicting-outputs
+	flutter  pub pub run build_runner build --delete-conflicting-outputs
 
 .PHONY: extract-arb
 extract-arb:

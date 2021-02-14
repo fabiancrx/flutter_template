@@ -9,7 +9,7 @@ extension TextStyleHelpers on TextStyle {
 
   TextStyle get italic => copyWith(fontStyle: FontStyle.italic);
 
-  TextStyle color(Color color) => this.copyWith(color: color);
+  TextStyle color(Color color) => copyWith(color: color);
 
   TextStyle letterSpace(double value) => copyWith(letterSpacing: value);
 }
@@ -54,10 +54,7 @@ double getResponsiveExtraLargeFontSize(BuildContext context) => getResponsiveFon
 
 double getResponsiveMassiveFontSize(BuildContext context) => getResponsiveFontSize(context, fontSize: 30);
 
-double getResponsiveFontSize(BuildContext context, {double fontSize, double max}) {
-  if (max == null) {
-    max = 100;
-  }
+double getResponsiveFontSize(BuildContext context, {double fontSize = 12, double max = 100}) {
   var responsiveSize = min(screenWidthFraction(context, 10) * (fontSize / 100), max);
 
   return responsiveSize;

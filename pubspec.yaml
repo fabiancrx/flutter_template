@@ -4,13 +4,13 @@ description: Flutter architecture template.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.11.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
- #State management
+  #State management
   flutter_bloc:
   hooks_riverpod:
 
@@ -21,28 +21,19 @@ dependencies:
   # UI
   auto_size_text:
   animations:
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.0
   logger:
-
-  # Network
-  dio:
-  dio_http_cache: ^0.2.11
-  fresh_dio:
 
   very_good_analysis:
   reactive_forms:
   freezed_annotation:
-#edvcli
+  #edvcli
   supercharged:
-  tuple:
-  url_launcher:
-  shared_preferences:
-#Triage if necessary
+  #Triage if necessary
   cross_connectivity: ^2.0.1
   built_value:
-  splashscreen: ^1.3.5
   get:
-
+  # Local dependencies
 dev_dependencies:
   flutter_test:
     sdk: flutter

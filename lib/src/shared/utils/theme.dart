@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 // Transparency list
 // 100% FF
 // 95%  F2
@@ -28,18 +29,26 @@ import 'package:flutter/material.dart';
 // 5%   0D
 // 0%   00
 class AppTheme {
-  Color bg = Colors.tealAccent;
+  Color bg;
   Color primary;
   bool isDark = false;
 
   /// Default constructor
-  AppTheme({@required this.isDark, @required this.primary, this.bg = Colors.white});
+  AppTheme({this.isDark = false, @required this.primary, this.bg}) {
+    if (bg == null) {
+      if (isDark) {
+        bg = const Color(0xff282c30);
+      } else {
+        bg = Colors.white;
+      }
+    }
+  }
 
   ThemeData get themeData {
     /// Create a TextTheme and ColorScheme, that we can use to generate ThemeData
-    TextTheme txtTheme = (isDark ? ThemeData.dark() : ThemeData.light()).textTheme;
-    Color txtColor = Color(0xff181818);
-    ColorScheme colorScheme = ColorScheme(
+    final txtTheme = (isDark ? ThemeData.dark() : ThemeData.light()).textTheme;
+    const txtColor = Color(0xff181818);
+    final colorScheme = ColorScheme(
         // Decide how you want to apply your own custom them, to the MaterialApp
         brightness: isDark ? Brightness.dark : Brightness.light,
         primary: primary,
@@ -56,17 +65,12 @@ class AppTheme {
         error: Colors.red.shade400);
 
     /// Now that we have ColorScheme and TextTheme, we can create the ThemeData
-    var t = ThemeData.from(
+    final t = ThemeData.from(
       textTheme: txtTheme,
       colorScheme: colorScheme,
     )
         // We can also add on some extra properties that ColorScheme seems to miss
-        .copyWith(
-            buttonColor: primary,
-            cursorColor: primary,
-            highlightColor: primary,
-            toggleableActiveColor: primary,
-            primaryColor: primary);
+        .copyWith(buttonColor: primary, highlightColor: primary, toggleableActiveColor: primary, primaryColor: primary);
 
     /// Return the themeData which MaterialApp can now use
     return t;
@@ -76,7 +80,7 @@ class AppTheme {
 class AppTheme2 {
   AppTheme2._();
 
-  static Color _iconColor = Colors.blueAccent.shade200;
+  static final Color _iconColor = Colors.blueAccent.shade200;
 
   static const Color _lightPrimaryColor = Colors.white;
   static const Color _lightPrimaryVariantColor = Color(0XFFE1E1E1);
@@ -90,11 +94,11 @@ class AppTheme2 {
 
   static final ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: _lightPrimaryVariantColor,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       color: _lightPrimaryVariantColor,
       iconTheme: IconThemeData(color: _lightOnPrimaryColor),
     ),
-    colorScheme: ColorScheme.light(
+    colorScheme: const ColorScheme.light(
       primary: _lightPrimaryColor,
       primaryVariant: _lightPrimaryVariantColor,
       secondary: _lightSecondaryColor,
@@ -108,11 +112,11 @@ class AppTheme2 {
 
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: _darkPrimaryVariantColor,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       color: _darkPrimaryVariantColor,
       iconTheme: IconThemeData(color: _darkOnPrimaryColor),
     ),
-    colorScheme: ColorScheme.light(
+    colorScheme: const ColorScheme.light(
       primary: _darkPrimaryColor,
       primaryVariant: _darkPrimaryVariantColor,
       secondary: _darkSecondaryColor,
@@ -124,21 +128,21 @@ class AppTheme2 {
     textTheme: _darkTextTheme,
   );
 
-  static final TextTheme _lightTextTheme = TextTheme(
-    headline: _lightScreenHeadingTextStyle,
-    body1: _lightScreenTaskNameTextStyle,
-    body2: _lightScreenTaskDurationTextStyle,
+  static const TextTheme _lightTextTheme = TextTheme(
+    headline6: _lightScreenHeadingTextStyle,
+    bodyText2: _lightScreenTaskNameTextStyle,
+    bodyText1: _lightScreenTaskDurationTextStyle,
   );
 
   static final TextTheme _darkTextTheme = TextTheme(
-    headline: _darkScreenHeadingTextStyle,
-    body1: _darkScreenTaskNameTextStyle,
-    body2: _darkScreenTaskDurationTextStyle,
+    headline6: _darkScreenHeadingTextStyle,
+    bodyText1: _darkScreenTaskNameTextStyle,
+    bodyText2: _darkScreenTaskDurationTextStyle,
   );
 
-  static final TextStyle _lightScreenHeadingTextStyle = TextStyle(fontSize: 48.0, color: _lightOnPrimaryColor);
-  static final TextStyle _lightScreenTaskNameTextStyle = TextStyle(fontSize: 20.0, color: _lightOnPrimaryColor);
-  static final TextStyle _lightScreenTaskDurationTextStyle = TextStyle(fontSize: 16.0, color: Colors.grey);
+  static const TextStyle _lightScreenHeadingTextStyle = TextStyle(fontSize: 48.0, color: _lightOnPrimaryColor);
+  static const TextStyle _lightScreenTaskNameTextStyle = TextStyle(fontSize: 20.0, color: _lightOnPrimaryColor);
+  static const TextStyle _lightScreenTaskDurationTextStyle = TextStyle(fontSize: 16.0, color: Colors.grey);
 
   static final TextStyle _darkScreenHeadingTextStyle =
       _lightScreenHeadingTextStyle.copyWith(color: _darkOnPrimaryColor);
@@ -146,8 +150,5 @@ class AppTheme2 {
   static final TextStyle _darkScreenTaskNameTextStyle =
       _lightScreenTaskNameTextStyle.copyWith(color: _darkOnPrimaryColor);
 
-  static final TextStyle _darkScreenTaskDurationTextStyle = _lightScreenTaskDurationTextStyle;
+  static const TextStyle _darkScreenTaskDurationTextStyle = _lightScreenTaskDurationTextStyle;
 }
-//////////////////////////////////////////////////////////////////////////////
-// Restorable app theme
-
