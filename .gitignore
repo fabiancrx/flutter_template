@@ -104,10 +104,11 @@ ios/fastlane/report.xml
 *.js.map
 node_modules/
 
-## Generated code
-# **/*.g.dart
-#lib/l10n/messages_*
-#l10n-arb/intl_messages.arb
-
+# Generated code
+ **/**.g.dart
+lib/l10n/messages_*
+l10n-arb/intl_messages.arb
+lib/**.gen.freezed.dart
 ## Test coverage
 coverage/
+/pubspec.lock

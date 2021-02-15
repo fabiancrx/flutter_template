@@ -4,4 +4,4 @@ targets:
       freezed:freezed:
         generate_for:
           include:
-            - lib/**.codegen.dart
+            - lib/**.gen.dart

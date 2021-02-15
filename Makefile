@@ -3,7 +3,7 @@ setup:
 	flutter channel beta
 	flutter upgrade
 	flutter pub get
-	npm install
+	make create
 	cd ios/ && pod install && cd ..
 
 .PHONY: dependencies
@@ -13,6 +13,10 @@ dependencies:
 .PHONY: analyze
 analyze:make
 	flutter analyze
+
+.PHONY: create
+create:
+	flutter create .
 
 .PHONY: format 
 format:

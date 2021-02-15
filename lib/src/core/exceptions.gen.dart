@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'exceptions.codegen.freezed.dart';
+part 'exceptions.gen.freezed.dart';
 @freezed
 abstract class Failure with _$Failure implements Exception {
   const factory Failure.noData(String message) = NoData;
