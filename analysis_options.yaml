@@ -3,9 +3,6 @@ include: package:very_good_analysis/analysis_options.yaml
 
 linter:
   rules:
-    prefer_const_literals_to_create_immutable: true
     sort_constructors_first: false
-    implicit-casts: false
-    implicit-dynamic: false
     public_member_api_docs: false
     lines_longer_than_80_chars: false

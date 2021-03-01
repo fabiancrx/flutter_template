@@ -31,6 +31,9 @@ ios/.idea/
 #.vscode/
 
 # Flutter/Dart/Pub related
+*.freezed.dart
+*.gen.*.dart
+*.gr.dart
 **/doc/api/
 .dart_tool/
 .flutter-plugins

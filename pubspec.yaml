@@ -9,53 +9,31 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.16.0
 
-  #State management
-  flutter_bloc:
-  hooks_riverpod:
-
-  #Core logic
   get_it:
   dartz:
+  supercharged:
+  freezed_annotation:
 
-  # UI
+  ##  Presentation
   auto_size_text:
   animations:
-  cupertino_icons: ^1.0.0
-  logger:
 
-  very_good_analysis:
-  reactive_forms:
-  freezed_annotation:
-  #edvcli
-  supercharged:
-  #Triage if necessary
-  cross_connectivity: ^2.0.1
-  built_value:
-  get:
-  # Local dependencies
 dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed:
   build_runner:
-
+  very_good_analysis: ^1.0.4
 
 flutter_gen:
-  output: lib/gen/ # Optional (default: lib/gen/)
-  lineLength: 80 # Optional (default: 80)
+  lineLength: 120
 
-  # Optional
-  integrations:
-    flutter_svg: false
-    flare_flutter: false
-# Add a remote custom package to flutter
-#  custom_package:
-#    git:
-#      url: https://github.com/your-username/custom_package
-#      path: packages/custom_package
 flutter:
-
+  generate: true
   uses-material-design: true
 
   assets:

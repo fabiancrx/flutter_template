@@ -1,13 +1,18 @@
 import 'package:get_it/get_it.dart';
-import 'package:template/src/core/services/navigation.dart';
-export 'package:template/src/shared/extensions/index.dart';
+import 'package:template/src/app/r.dart';
+
+import 'services/navigation.dart';
+import 'services/theme.dart';
+export 'package:template/src/shared/extensions.dart';
 
 GetIt service = GetIt.instance;
 
 /// Inject dependencies that are stateless
 // in other words dependencies that live for the lifetime of the app
 Future<void> inject() async {
-  service.registerLazySingleton<Navigation>(() => Navigation());
+  service..registerSingleton<Navigation>(Navigation())
+  ..registerSingleton<AppThemeState>(R.theme.appTheme);
+
   registerDependencies();
 }
 

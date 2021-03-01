@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 /// Type alias for a function `PageBuilder` that takes no params and returns a [Widget]
 
-typedef Widget PageBuilder();
+typedef PageBuilder = Widget Function();
 
 /// A utility class for defining page routes
 ///
@@ -55,9 +55,9 @@ class PageRoutes {
       transitionDuration: Duration(milliseconds: (duration * 1000).round()),
       pageBuilder: (context, animation, secondaryAnimation) => page(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        bool reverse = animation.status == AnimationStatus.reverse;
+        final reverse = animation.status == AnimationStatus.reverse;
         return SlideTransition(
-          position: Tween<Offset>(begin: startOffset, end: Offset(0, 0))
+          position: Tween<Offset>(begin: startOffset, end: const Offset(0, 0))
               .animate(CurvedAnimation(parent: animation, curve: reverse ? easeReverse : easeFwd)),
           child: child,
         );

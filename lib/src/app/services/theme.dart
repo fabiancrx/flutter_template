@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class AppThemeState {
   final ThemeData lightTheme;
   final ThemeData darkTheme;
-  final StreamController<ThemeData> _currentTheme = StreamController();
+  final StreamController<ThemeData> _currentTheme = StreamController.broadcast();
   bool _isDark = false;
 
   Stream<ThemeData> get theme => _currentTheme.stream;
