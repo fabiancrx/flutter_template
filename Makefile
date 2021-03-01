@@ -11,7 +11,7 @@ dependencies:
 	flutter pub get
 
 .PHONY: analyze
-analyze:make
+analyze:analyze
 	flutter analyze
 
 .PHONY: create
@@ -30,6 +30,11 @@ format-analyze:
 .PHONY: build-runner
 build-runner:
 	flutter  pub pub run build_runner build --delete-conflicting-outputs
+
+.PHONY: watch
+watch:
+	flutter  pub pub run build_runner watch --delete-conflicting-outputs
+
 
 .PHONY: extract-arb
 extract-arb:
@@ -72,10 +77,3 @@ unit-test:
 .PHONY: splash
 splash:
 	flutter pub run flutter_native_splash:create
-
-#.PHONY: package
-#package:
-#	cd packages && flutter create --template=package $@ $(call args,$@)
-
-
-
