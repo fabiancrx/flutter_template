@@ -1,0 +1,7 @@
+{
+    "@@locale": "en",
+    "notACounterAppBarTitle": "Not a counter",
+    "@notACounterAppBarTitle": {
+        "description": "This is not a counter app"
+    }
+}
